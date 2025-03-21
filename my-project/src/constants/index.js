@@ -2,7 +2,8 @@ import project1 from "../assets/i1.png";
 import project4 from "../assets/i2.png";
 import project2 from "../assets/img1.png";
 import project3 from "../assets/img2.png";
-import project5 from "../assets/image.png";
+import project5 from "../assets/image123.png";
+import project6 from "../assets/quiz.png";
 // import project3 from "../assets/projects/project-3.jpg";
 // import project4 from "../assets/projects/project-4.jpg";
 
@@ -49,6 +50,13 @@ export const PROJECTS = [
       "A simple website where students can easily access all study materials – a one-stop solution for all their educational resources.",
     technologies: ["HTML", "CSS", "Javascript"],
     link: "https://pu-mca.netlify.app/",
+  },
+  {
+    title: "Quiz App",
+    image: project6,
+    description: "A Quiz App",
+    technologies: ["Tailwind", "React"],
+    link: "https://mca-quiz.vercel.app/",
   },
   {
     title: "Currency Converter",
