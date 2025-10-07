@@ -1,9 +1,9 @@
-import project1 from "../assets/i1.png";
+import project1 from "../assets/pu-vault.png";
 import project4 from "../assets/i2.png";
-import project2 from "../assets/img1.png";
+import project2 from "../assets/ak-photography.png";
 import project3 from "../assets/img2.png";
 import project5 from "../assets/image123.png";
-import project6 from "../assets/quiz.png";
+import project6 from "../assets/trust-tracker.png";
 // import project3 from "../assets/projects/project-3.jpg";
 // import project4 from "../assets/projects/project-4.jpg";
 
@@ -44,6 +44,13 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
+    title: "Trust Tracker",
+    image: project6,
+    description: "An advanced expense tracker",
+    technologies: ["React", "Supabase", "Tailwind"],
+    link: "https://www.trusttracker.live/",
+  },
+  {
     title: "Study Point Website",
     image: project1,
     description:
@@ -51,20 +58,14 @@ export const PROJECTS = [
     technologies: ["HTML", "CSS", "Javascript"],
     link: "https://pu-mca.netlify.app/",
   },
+
   {
-    title: "Quiz App",
-    image: project6,
-    description: "A Quiz App",
-    technologies: ["Tailwind", "React"],
-    link: "https://mca-quiz.vercel.app/",
-  },
-  {
-    title: "Currency Converter",
+    title: "AK Photography",
     image: project2,
     description:
-      "A currency converter is a tool that helps users quickly convert one currency to another using current exchange rates. It’s useful for travel, shopping, and financial transactions.",
-    technologies: ["HTML", "Tailwind", "React"],
-    link: "https://currency-converter-nine-wheat.vercel.app/",
+      "A portfolio website for a photographer to showcase their work, attract potential clients, and provide information about their services.",
+    technologies: ["Tailwind", "React"],
+    link: "https://ankush-photography.vercel.app",
   },
   {
     title: "To Do App",
