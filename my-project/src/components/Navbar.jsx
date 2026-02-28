@@ -1,6 +1,8 @@
 // import React from 'react'
 // import logo from "../assets/k.jpg"
 import { FaLinkedin, FaGithub, FaInstagram } from "react-icons/fa";
+import { motion } from "motion/react";
+import resume from "../assets/Karan_Resume.pdf";
 
 const Navbar = () => {
   return (
@@ -10,6 +12,14 @@ const Navbar = () => {
         <p className="text-3xl">KK</p>
       </div>
       <div className="m-8 flex items-center justify-center gap-4 text-2xl">
+        <motion.a
+          href={resume}
+          download="Karan_Kacha_Resume.pdf"
+          whileHover={{ scale: 1.1 }}
+          className="mr-2 rounded-full border border-neutral-700 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-neutral-300 transition-all hover:bg-neutral-800 hover:text-white"
+        >
+          Resume
+        </motion.a>
         <a
           href="https://www.linkedin.com/in/kacha-karan-5337731b2?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
           className="social-icon"

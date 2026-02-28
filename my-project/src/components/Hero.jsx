@@ -1,6 +1,7 @@
 import { HERO_CONTENT } from "../constants";
 import profilePic from "../assets/p2.jpg";
 import { motion } from "motion/react";
+import resume from "../assets/Karan_Resume.pdf";
 
 const container = (delay) => ({
   hidden: { x: -100, opacity: 0 },
@@ -42,6 +43,18 @@ const Hero = () => {
             >
               {HERO_CONTENT}
             </motion.p>
+            <motion.a
+              variants={container(1.2)}
+              initial="hidden"
+              animate="visible"
+              href={resume}
+              download="Karan_Kacha_Resume.pdf"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="mb-8 rounded-full bg-neutral-100 px-8 py-3 text-sm font-semibold text-neutral-900 transition-all hover:bg-neutral-300 lg:mb-0"
+            >
+              Download Resume
+            </motion.a>
           </div>
         </div>
         <div className="w-full lg:w-1/2 lg:p-8">
