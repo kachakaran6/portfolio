@@ -1,0 +1,105 @@
+@import "tailwindcss";
+
+@theme {
+  /* Layout and spacing variables remain static */
+  --spacing-margin-desktop: 64px;
+  --spacing-grid-unit: 8px;
+  --spacing-margin-tablet: 32px;
+  --spacing-margin-mobile: 20px;
+  --spacing-gutter: 1px;
+
+  --font-headline-lg: var(--font-inter);
+  --font-display-xl: var(--font-inter);
+  --font-label-mono-sm: var(--font-ibm-plex-mono);
+  --font-headline-md: var(--font-inter);
+  --font-headline-lg-mobile: var(--font-inter);
+  --font-body-lg: var(--font-inter);
+  --font-label-mono-bold: var(--font-ibm-plex-mono);
+  --font-body-md: var(--font-inter);
+  --font-display-xl-mobile: var(--font-inter);
+
+  /* Instead of fixed colors, point everything to var() */
+  --color-background: var(--color-background-var);
+  --color-primary: var(--color-primary-var);
+  --color-secondary: var(--color-secondary-var);
+  --color-surface-dim: var(--color-surface-dim-var);
+  --color-grid-line: var(--color-grid-line-var);
+  --color-metadata-gray: var(--color-metadata-gray-var);
+  --color-paper-white: var(--color-paper-white-var);
+  --color-on-surface-variant: var(--color-metadata-gray-var);
+  --color-surface-bright: var(--color-surface-bright-var);
+  --color-on-primary: var(--color-on-primary-var);
+  --color-surface: var(--color-paper-white-var);
+}
+
+@layer base {
+  :root {
+    /* Light Mode Palette */
+    --color-background-var: #F7F6F2;
+    --color-primary-var: #0E0F12;
+    --color-secondary-var: #C8102E;
+    --color-metadata-gray-var: #5A5A5A;
+    --color-grid-line-var: #E2E0D8;
+    --color-paper-white-var: #F8F8F6;
+    --color-surface-dim-var: #EAE9E4;
+    --color-surface-bright-var: #FFFFFF;
+    --color-on-primary-var: #FFFFFF;
+  }
+
+  .dark {
+    /* Dark Mode Palette */
+    --color-background-var: #0E0F12;
+    --color-primary-var: #F2F1EC;
+    --color-secondary-var: #E0314A;
+    --color-metadata-gray-var: #9A9A9A;
+    --color-grid-line-var: #23242A;
+    --color-paper-white-var: #141519;
+    --color-surface-dim-var: #1C1E24;
+    --color-surface-bright-var: #191B20;
+    --color-on-primary-var: #0E0F12;
+  }
+
+  body {
+    background-color: var(--color-background-var);
+    color: var(--color-primary-var);
+    background-image: 
+        linear-gradient(to right, var(--color-grid-line-var) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--color-grid-line-var) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+}
+
+@layer utilities {
+  .cursor-precision {
+    cursor: crosshair;
+  }
+}
+
+@keyframes draw {
+  to { stroke-dashoffset: 0; }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.1); }
+}
+
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
