@@ -6,6 +6,7 @@ import anime from "animejs";
 import { useTheme } from "next-themes";
 import { GitHubCalendar } from "react-github-calendar";
 import LogoLoop from "./LogoLoop";
+const LogoLoopAny = LogoLoop as any;
 import { 
   SiReact, SiNextdotjs, SiNodedotjs, SiMysql, SiPostgresql, 
   SiMongodb, SiJavascript, SiTypescript, SiTailwindcss, 
@@ -134,15 +135,14 @@ export function TechStack() {
       </div>
       
       <div className="w-full mb-16 overflow-hidden relative" ref={gridRef} style={{ opacity: 0 }}>
-        {/* @ts-ignore - LogoLoop is in JSX and lacks TS types */}
-        <LogoLoop
+        <LogoLoopAny
           logos={logos}
           speed={40}
           direction="left"
           gap={16}
           logoHeight={200}
           hoverSpeed={10}
-          renderItem={(item) => (
+          renderItem={(item: any) => (
             <div 
               className="bg-background border border-grid-line w-40 h-40 md:w-48 md:h-48 flex flex-col items-center justify-center gap-4 relative group cursor-pointer transition-colors duration-300 hover:bg-surface-bright"
               onMouseEnter={handleMouseEnter}
