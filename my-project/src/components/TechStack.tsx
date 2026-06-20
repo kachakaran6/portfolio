@@ -134,6 +134,7 @@ export function TechStack() {
       </div>
       
       <div className="w-full mb-16 overflow-hidden relative" ref={gridRef} style={{ opacity: 0 }}>
+        {/* @ts-ignore - LogoLoop is in JSX and lacks TS types */}
         <LogoLoop
           logos={logos}
           speed={40}
