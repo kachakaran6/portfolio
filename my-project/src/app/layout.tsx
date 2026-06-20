@@ -18,6 +18,9 @@ const ibmPlexMono = IBM_Plex_Mono({
 export const metadata: Metadata = {
   title: "Karan Kacha — Engineering Excellence Journal",
   description: "Portfolio of Karan Kacha, Full Stack Developer",
+  icons: {
+    icon: "https://img.icons8.com/?size=100&id=J3nZHWgT1e7m&format=png&color=000000",
+  },
 };
 
 export default function RootLayout({
