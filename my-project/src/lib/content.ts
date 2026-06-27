@@ -6,7 +6,7 @@ export const HERO = {
     line3: "Developer.",
   },
   subcopy: "I am an enthusiastic full stack developer eager to build robust and scalable web applications. Hands-on experience with React, Next.js, Node.js, MySQL, PostgreSQL, and MongoDB — focused on shipping innovative solutions and exceptional user experiences.",
-  resumeLink: "https://www.kachakaran.me/assets/Karan_Resume-CCW6_wzY.pdf",
+  resumeLink: "/Karan_Resume.pdf",
   socials: {
     linkedin: "https://www.linkedin.com/in/kacha-karan-5337731b2",
     github: "https://github.com/kachakaran6",
@@ -69,6 +69,20 @@ export const EXPERIENCE = {
 export const PROJECTS = {
   eyebrow: "WORK",
   items: [
+    {
+      title: "Samast",
+      description: "145+ tools utility suite where you can find every type of tool. Developer friendly, student friendly, and anyone can use it. Totally client-side.",
+      tags: ["React", "Tailwind", "Shadcn", "MDX"],
+      link: "https://samast.vercel.app/",
+      image: "/projects/samast.png"
+    },
+    {
+      title: "Chill The Beans",
+      description: "A beautiful landing page for a cafe.",
+      tags: ["React", "Tailwind"],
+      link: "https://chillthebeans.vercel.app/",
+      image: "/projects/chillthebeans.png"
+    },
     {
       title: "Trust Tracker",
       description: "An advanced expense tracker.",

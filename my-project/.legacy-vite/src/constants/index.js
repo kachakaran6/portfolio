@@ -48,6 +48,21 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
+    title: "Samast",
+    image: project11, // src/assets/samast.png
+    description: "145+ tools utility suite where you can find every type of tool. Developer friendly, student friendly, and anyone can use it. Totally client-side.",
+    technologies: ["React", "Tailwind"],
+    link: "https://samast.vercel.app/",
+  },
+  {
+    title: "Chill The Beans",
+    image: project12, // src/assets/chillthebeans.png
+    description: "A beautiful landing page for a cafe.",
+    technologies: ["React", "Tailwind"],
+    link: "https://chillthebeans.vercel.app/",
+  },
+
+  {
     title: "Trust Tracker",
     image: project6,
     description: "An advanced expense tracker",
