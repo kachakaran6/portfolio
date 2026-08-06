@@ -48,7 +48,7 @@ const FALLBACK_DATA: AppData[] = [
     "packageName": "com.noctune.music",
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.noctune.music",
     "iconUrl": "/images/noctune.png",
-    "status": "coming_soon",
+    "status": "production",
     "description": "Modern music player for music lovers who want to listen offline."
   },
   {
@@ -59,6 +59,24 @@ const FALLBACK_DATA: AppData[] = [
     "iconUrl": "/images/divine-geeta.png",
     "status": "coming_soon",
     "description": "Daily spiritual wisdom and insights for a peaceful life."
+  },
+  {
+    "id": "com.gymbuddy.application",
+    "appName": "GymBuddy - Track Your Body",
+    "packageName": "com.gymbuddy.application",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.gymbuddy.application",
+    "iconUrl": "/images/gymbuddy.png",
+    "status": "coming_soon",
+    "description": "Monitor workouts, body measurements, fitness progress, and achieve your health goals."
+  },
+  {
+    "id": "com.taskmitra.application",
+    "appName": "TaskMitra - Ultimate ToDo",
+    "packageName": "com.taskmitra.application",
+    "playStoreUrl": "https://play.google.com/store/apps/details?id=com.taskmitra.application",
+    "iconUrl": "/images/taskmitra.png",
+    "status": "coming_soon",
+    "description": "Organize tasks, manage projects, set reminders, and boost productivity with ease."
   }
 ];
 
@@ -71,7 +89,7 @@ export function MobileApps() {
     // Attempt to fetch fresh data if available
     const fetchApps = async () => {
       try {
-        const res = await fetch("https://raw.githubusercontent.com/kachakaran6/Application-json/main/db.json");
+        const res = await fetch("https://raw.githubusercontent.com/kachakaran6/Application-json/refs/heads/main/app.json");
         if (res.ok) {
           const data = await res.json();
           if (data && data.apps) {

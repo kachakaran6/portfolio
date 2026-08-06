@@ -74,7 +74,14 @@ export const PROJECTS = {
       description: "145+ tools utility suite where you can find every type of tool. Developer friendly, student friendly, and anyone can use it. Totally client-side.",
       tags: ["React", "Tailwind", "Shadcn", "MDX"],
       link: "https://samast.vercel.app/",
-      image: "/projects/samast.png"
+      image: "/projects/samast-new.png"
+    },
+    {
+      title: "Vault X",
+      description: "The ultimate link vault. Save, organize, and secure your digital bookmarks effortlessly.",
+      tags: ["React", "Next.js", "Tailwind"],
+      link: "https://vaultx-web.vercel.app/home",
+      image: "/projects/vault-x.png"
     },
     {
       title: "Chill The Beans",
