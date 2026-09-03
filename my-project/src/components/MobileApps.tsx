@@ -12,6 +12,7 @@ interface AppData {
   iconUrl: string;
   status: string;
   description: string;
+  downloads?: string;
 }
 
 const FALLBACK_DATA: AppData[] = [
@@ -22,7 +23,8 @@ const FALLBACK_DATA: AppData[] = [
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.vaultx.vault_x",
     "iconUrl": "/images/vaultx.png",
     "status": "production",
-    "description": "The ultimate link vault. Save, organize, and secure your digital bookmarks effortlessly."
+    "description": "The ultimate link vault. Save, organize, and secure your digital bookmarks effortlessly.",
+    "downloads": "100+ Downloads"
   },
   {
     "id": "com.trusttracker.trust_tracker_flutter",
@@ -31,7 +33,8 @@ const FALLBACK_DATA: AppData[] = [
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.trusttracker.trust_tracker_flutter",
     "iconUrl": "/images/trust-tracker.png",
     "status": "production",
-    "description": "A secure personal finance app to effortlessly track your subscriptions and manage daily expenses"
+    "description": "A secure personal finance app to effortlessly track your subscriptions and manage daily expenses",
+    "downloads": "50+ Downloads"
   },
   {
     "id": "com.snapdocs.app",
@@ -40,7 +43,8 @@ const FALLBACK_DATA: AppData[] = [
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.snapdocs.app",
     "iconUrl": "/images/snapdocs.png",
     "status": "production",
-    "description": "Offline secure document storage application."
+    "description": "Offline secure document storage application.",
+    "downloads": "50+ Downloads"
   },
   {
     "id": "com.noctune.music",
@@ -49,7 +53,8 @@ const FALLBACK_DATA: AppData[] = [
     "playStoreUrl": "https://play.google.com/store/apps/details?id=com.noctune.music",
     "iconUrl": "/images/noctune.png",
     "status": "production",
-    "description": "Modern music player for music lovers who want to listen offline."
+    "description": "Modern music player for music lovers who want to listen offline.",
+    "downloads": "100+ Downloads"
   },
   {
     "id": "com.divinegeeta.app",
@@ -93,11 +98,34 @@ export function MobileApps() {
         if (res.ok) {
           const data = await res.json();
           if (data && data.apps) {
-            setApps(data.apps);
+            const merged = data.apps.map((remoteApp: AppData) => {
+              const fb = FALLBACK_DATA.find(f => f.id === remoteApp.id);
+              return {
+                ...remoteApp,
+                downloads: remoteApp.downloads || fb?.downloads,
+              };
+            });
+            setApps(merged);
           }
         }
       } catch (err) {
         console.warn("Using fallback mobile apps data", err);
+      }
+
+      // Query live downloads from Google Play via local API
+      const liveApps = FALLBACK_DATA.filter(a => a.status === 'production');
+      for (const liveApp of liveApps) {
+        try {
+          const statsRes = await fetch(`/api/play-store?appId=${encodeURIComponent(liveApp.packageName)}`);
+          if (statsRes.ok) {
+            const stats = await statsRes.json();
+            if (stats && stats.downloads) {
+              setApps(prev => prev.map(a => a.packageName === liveApp.packageName ? { ...a, downloads: stats.downloads } : a));
+            }
+          }
+        } catch {
+          // silently keep fallback downloads
+        }
       }
     };
     fetchApps();
@@ -186,12 +214,18 @@ export function MobileApps() {
                 <Smartphone className="hidden sibling-fallback text-secondary opacity-50" />
               </div>
               
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-1.5">
                 <h3 className="font-headline-md text-xl font-bold leading-tight">{app.appName}</h3>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <span className={`font-label-mono-bold text-[0.625rem] uppercase px-2 py-0.5 border ${app.status === 'production' ? 'border-secondary text-secondary' : 'border-metadata-gray text-metadata-gray'}`}>
                     {app.status === 'production' ? 'Live' : 'Coming Soon'}
                   </span>
+                  {app.status === 'production' && app.downloads && (
+                    <span className="font-label-mono-bold text-[0.625rem] uppercase px-2 py-0.5 border border-grid-line bg-surface-dim text-primary inline-flex items-center gap-1">
+                      <Download size={10} className="text-secondary" />
+                      {app.downloads}
+                    </span>
+                  )}
                 </div>
               </div>
             </div>
