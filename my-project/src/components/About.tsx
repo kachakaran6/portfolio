@@ -148,7 +148,7 @@ export function About() {
               
               <div className="flex flex-col gap-1">
                 <span className="font-label-mono-bold text-[0.625rem] text-metadata-gray uppercase">Experience</span>
-                <span className="font-body-md text-primary font-medium">2+ Years Learning</span>
+                <span className="font-body-md text-primary font-medium">Full Stack & DevOps</span>
               </div>
             </div>
           </div>

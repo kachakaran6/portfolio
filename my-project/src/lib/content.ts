@@ -16,7 +16,7 @@ export const HERO = {
 
 export const ABOUT = {
   eyebrow: "ABOUT",
-  content: "I am an enthusiastic and adaptable full stack developer with a strong passion for building efficient and user-friendly web applications. Though I'm early in my career, I've gained practical experience with technologies like React, Next.js, Node.js, MySQL, PostgreSQL, and MongoDB. My journey in web development started from a curiosity about how things work, and it has grown into a deep commitment to learning and tackling new challenges. I enjoy collaborating with teams and solving problems to create high-quality solutions. Outside of coding, I'm always eager to explore new technologies and contribute to open-source projects.",
+  content: "I am a full stack developer dedicated to architecting efficient, scalable web applications and robust cloud infrastructure. Working across modern frontend frameworks (React, Next.js), backend REST APIs (Node.js, PostgreSQL, MongoDB), Linux server management, and automated Coolify deployments, I bridge full-stack engineering with practical AI integrations. I enjoy solving real-world challenges, collaborating across cross-functional teams, and shipping production-grade digital experiences.",
   ideology: [
     { step: "01", title: "Research", desc: "Analyze requirements and explore technical feasibility." },
     { step: "02", title: "Learn", desc: "Acquire domain knowledge and necessary modern tooling." },
@@ -30,8 +30,8 @@ export const TECH_STACK = {
   eyebrow: "SKILLS",
   technologies: [
     "React", "Next.js", "Node.js", "Flutter",
-    "MongoDB", "JavaScript", "TypeScript", "Tailwind CSS",
-    "Java", "AI/ML basics"
+    "PostgreSQL", "MongoDB", "TypeScript", "REST APIs",
+    "Coolify / DevOps", "Server Management", "Tailwind CSS", "AI & Prompt Eng."
   ]
 };
 
@@ -57,11 +57,18 @@ export const EXPERIENCE = {
   eyebrow: "EXPERIENCE",
   items: [
     {
-      year: "Feb 2026 – Present",
+      year: "Sept 2026 – Present",
+      role: "Full Stack Developer",
+      company: "Qwint Soft LLP",
+      description: "Driving full-lifecycle product engineering across web development, scalable backend REST APIs, Linux server infrastructure, automated Coolify container deployments, and production AI workflow integrations.",
+      tags: ["Full Stack", "Backend APIs", "Server Management", "Coolify", "React / Next.js", "Node.js", "PostgreSQL"]
+    },
+    {
+      year: "Mar 2026 – Aug 2026",
       role: "Prompt Engineer Intern",
       company: "Qwint Soft LLP",
-      description: "Working as a Prompt Engineer Intern, crafting precise instructions to guide AI models, optimizing outputs, and developing sophisticated prompt chains for automated workflows.",
-      tags: ["Prompt Engineering", "AI", "LLMs"]
+      description: "Crafted precise instructions to guide AI models, optimized inference outputs, and developed prompt chains and automated AI workflows for production pipelines.",
+      tags: ["Prompt Engineering", "AI", "LLMs", "Automated Workflows"]
     }
   ]
 };
