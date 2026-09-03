@@ -4,6 +4,15 @@ import { PROJECTS } from "@/lib/content";
 import { useEffect, useRef } from "react";
 import anime from "animejs";
 import Image from "next/image";
+import { Lock, ExternalLink } from "lucide-react";
+
+function getDomain(url: string): string {
+  try {
+    return new URL(url).hostname.replace(/^www\./, "");
+  } catch {
+    return url;
+  }
+}
 
 export function Projects() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -97,29 +106,54 @@ export function Projects() {
             onMouseLeave={handleMouseLeave}
             className="flex flex-col border border-grid-line bg-paper-white transition-colors duration-300 block group"
           >
-            {/* Project Image */}
-            <div className="w-full aspect-video bg-surface-dim border-b border-grid-line flex items-center justify-center overflow-hidden relative group-hover:bg-surface transition-colors">
+            {/* Browser Header Bar */}
+            <div className="w-full h-7 bg-surface-bright/95 border-b border-grid-line px-3 flex items-center justify-between text-[10px] font-label-mono-sm text-metadata-gray">
+              <div className="flex items-center gap-1.5">
+                <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]/85 border border-[#E0443E]/60 inline-block" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]/85 border border-[#DEA123]/60 inline-block" />
+                <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]/85 border border-[#1AAB29]/60 inline-block" />
+              </div>
+              <div className="flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-surface-dim/80 border border-grid-line/60 max-w-[65%] truncate">
+                <Lock className="w-2.5 h-2.5 text-secondary shrink-0" />
+                <span className="truncate">{getDomain(project.link)}</span>
+              </div>
+              <div className="flex items-center gap-1">
+                <span className="text-[9px] uppercase tracking-wider px-1.5 py-0.2 rounded bg-surface-dim text-metadata-gray font-semibold border border-grid-line/40">HD</span>
+              </div>
+            </div>
+
+            {/* Project Image Showcase */}
+            <div className="w-full aspect-[16/10] relative flex items-center justify-center bg-surface-dim border-b border-grid-line overflow-hidden">
               {project.image ? (
                 <Image 
                   src={project.image} 
                   alt={project.title} 
                   fill
+                  unoptimized
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                  className="object-contain opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
+                  className="object-contain opacity-95 group-hover:opacity-100 transition-opacity duration-300"
                 />
               ) : (
                 <div className="absolute inset-0 pointer-events-none opacity-20" style={{ backgroundImage: "linear-gradient(45deg, transparent 45%, var(--color-grid-line) 45%, var(--color-grid-line) 55%, transparent 55%)", backgroundSize: "10px 10px" }}></div>
               )}
             </div>
             
+            {/* Card Content */}
             <div className="p-6 flex flex-col flex-grow">
               <div className="flex justify-between items-start mb-4">
-                <h3 className="font-headline-md text-xl font-bold group-hover:text-secondary transition-colors">{project.title}</h3>
-                <span className="font-label-mono-bold text-[0.625rem] text-metadata-gray opacity-50">{String(index + 1).padStart(2, "0")}</span>
+                <h3 className="font-headline-md text-xl font-bold group-hover:text-secondary transition-colors inline-flex items-center gap-2">
+                  <span>{project.title}</span>
+                  <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
+                </h3>
+                <span className="font-label-mono-bold text-[0.625rem] text-metadata-gray opacity-50">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
               </div>
+
               <p className="font-body-md text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">
                 {project.description}
               </p>
+
               <div className="flex flex-wrap gap-2 mt-auto">
                 {project.tags.map(tag => (
                   <span key={tag} className="px-2 py-1 border border-grid-line font-label-mono-sm text-[0.625rem] uppercase text-primary bg-surface-bright">
