@@ -115,7 +115,7 @@ export function Projects() {
             <div className="p-6 flex flex-col flex-grow">
               <div className="flex justify-between items-start mb-4">
                 <h3 className="font-headline-md text-xl font-bold group-hover:text-secondary transition-colors">{project.title}</h3>
-                <span className="font-label-mono-bold text-[0.625rem] text-metadata-gray opacity-50">0{index + 1}</span>
+                <span className="font-label-mono-bold text-[0.625rem] text-metadata-gray opacity-50">{String(index + 1).padStart(2, "0")}</span>
               </div>
               <p className="font-body-md text-on-surface-variant text-sm mb-6 flex-grow leading-relaxed">
                 {project.description}

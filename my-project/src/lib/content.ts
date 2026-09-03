@@ -70,11 +70,25 @@ export const PROJECTS = {
   eyebrow: "WORK",
   items: [
     {
+      title: "AutoEOD",
+      description: "Automated AI-powered End-of-Day & standup report platform. Aggregates GitHub activity, commits, and PRs to generate and dispatch structured daily work reports.",
+      tags: ["TypeScript", "React", "Node.js", "PostgreSQL", "Prisma", "BullMQ", "AI / LLM"],
+      link: "https://autoeod.kachakaran.tech",
+      image: "/projects/auto-eod.png"
+    },
+    {
       title: "Samast",
       description: "145+ tools utility suite where you can find every type of tool. Developer friendly, student friendly, and anyone can use it. Totally client-side.",
       tags: ["React", "Tailwind", "Shadcn", "MDX"],
       link: "https://samast.vercel.app/",
       image: "/projects/samast-new.png"
+    },
+    {
+      title: "Samast Forms",
+      description: "Next-gen form orchestrator and builder. Create customizable forms, build validation pipelines, rotate secure API keys, and hook direct Telegram alerts instantly.",
+      tags: ["React", "TypeScript", "Tailwind", "Webhooks", "REST API"],
+      link: "https://forms.samast.pro",
+      image: "/projects/samast-forms.png"
     },
     {
       title: "Vault X",
