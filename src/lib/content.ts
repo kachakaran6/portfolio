@@ -58,10 +58,10 @@ export const EXPERIENCE = {
   items: [
     {
       year: "Sept 2026 – Present",
-      role: "Full Stack Developer",
+      role: "Software Engineer",
       company: "Qwint Soft LLP",
       description: "Driving full-lifecycle product engineering across web development, scalable backend REST APIs, Linux server infrastructure, automated Coolify container deployments, and production AI workflow integrations.",
-      tags: ["Full Stack", "Backend APIs", "Server Management", "Coolify", "React / Next.js", "Node.js", "PostgreSQL"]
+      tags: ["Software Engineering", "Backend APIs", "Server Management", "Coolify", "React / Next.js", "Node.js", "PostgreSQL"]
     },
     {
       year: "Mar 2026 – Aug 2026",
