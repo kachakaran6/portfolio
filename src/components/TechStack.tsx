@@ -12,7 +12,7 @@ import {
   SiMongodb, SiJavascript, SiTypescript, SiTailwindcss, 
   SiPython, SiFlutter
 } from "react-icons/si";
-import { FaJava, FaBrain } from "react-icons/fa";
+import { FaJava, FaBrain, FaCode, FaDocker, FaServer } from "react-icons/fa";
 
 // Map names from content to icons
 const getIconForTech = (tech: string) => {
@@ -26,6 +26,9 @@ const getIconForTech = (tech: string) => {
     case "javascript": return <SiJavascript className="w-8 h-8 md:w-10 md:h-10 text-primary opacity-60 group-hover:opacity-100 group-hover:text-secondary transition-all" />;
     case "typescript": return <SiTypescript className="w-8 h-8 md:w-10 md:h-10 text-primary opacity-60 group-hover:opacity-100 group-hover:text-secondary transition-all" />;
     case "tailwind css": return <SiTailwindcss className="w-8 h-8 md:w-10 md:h-10 text-primary opacity-60 group-hover:opacity-100 group-hover:text-secondary transition-all" />;
+    case "rest apis": return <FaCode className="w-8 h-8 md:w-10 md:h-10 text-primary opacity-60 group-hover:opacity-100 group-hover:text-secondary transition-all" />;
+    case "coolify / devops": return <FaDocker className="w-8 h-8 md:w-10 md:h-10 text-primary opacity-60 group-hover:opacity-100 group-hover:text-secondary transition-all" />;
+    case "server management": return <FaServer className="w-8 h-8 md:w-10 md:h-10 text-primary opacity-60 group-hover:opacity-100 group-hover:text-secondary transition-all" />;
     case "java": return <FaJava className="w-8 h-8 md:w-10 md:h-10 text-primary opacity-60 group-hover:opacity-100 group-hover:text-secondary transition-all" />;
     case "python": return <SiPython className="w-8 h-8 md:w-10 md:h-10 text-primary opacity-60 group-hover:opacity-100 group-hover:text-secondary transition-all" />;
     case "flutter": return <SiFlutter className="w-8 h-8 md:w-10 md:h-10 text-primary opacity-60 group-hover:opacity-100 group-hover:text-secondary transition-all" />;

@@ -8,12 +8,10 @@ import { Projects } from "@/components/Projects";
 import { MobileApps } from "@/components/MobileApps";
 import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
-import { SceneCanvas } from "@/components/three/SceneCanvas";
 
 export default function Home() {
   return (
     <>
-      <SceneCanvas />
       <Nav />
       <main className="flex min-h-screen flex-col items-center justify-between w-full relative z-10">
         <Hero />
