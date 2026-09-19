@@ -16,9 +16,7 @@ export function Hero() {
         </div>
 
         <h1 className="font-display-xl-mobile md:font-display-xl text-5xl md:text-[clamp(5rem,8vw,7.5rem)] mb-8 leading-[1.05] md:leading-[0.9] tracking-tight">
-          <div className="font-bold">
-            {HERO.headline.line1}
-          </div>
+          <div className="font-bold">{HERO.headline.line1}</div>
           <div className="text-secondary italic font-serif font-medium">
             {HERO.headline.line2}
           </div>
